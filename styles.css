@@ -146,7 +146,7 @@ a.pure-button-primary {
 .splash {
     /* absolute center .splash within .splash-container */
     width: 80%;
-    height: 70%;
+    height: 50%;
     margin: auto;
     position: absolute;
     top: 0px; left: 0; bottom: 0; right: 0;
@@ -283,4 +283,36 @@ a.pure-button-primary {
     .splash-head {
         font-size: 300%;
     }
+}
+
+.text-sm {
+    font-size: 18px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 40px auto 0;
+    display: block;
+}
+
+@media screen and (min-width: 468px) {
+    .logo {
+        width: 280px;
+        height: 280px;
+        margin: 40px auto 0;
+        display: block;
+    }
+    
+}
+
+@media screen and (max-height: 468px) {
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin: 20px auto 0;
+        display: block;
+    }
+    
 }
