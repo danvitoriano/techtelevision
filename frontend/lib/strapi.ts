@@ -113,17 +113,35 @@ export async function getNoticiaBySlug(slug: string): Promise<Noticia | null> {
 }
 
 export async function getCategorias(): Promise<StrapiResponse<Categoria[]>> {
-  return fetchAPI('/categorias?sort[0]=nome:asc');
+  try {
+    const queryParams = new URLSearchParams();
+    queryParams.append('fields[0]', 'nome');
+    queryParams.append('fields[1]', 'slug');
+    queryParams.append('fields[2]', 'descricao');
+    queryParams.append('sort[0]', 'nome:asc');
+    
+    return fetchAPI(`/categorias?${queryParams.toString()}`);
+  } catch (error) {
+    console.error('Erro ao buscar categorias:', error);
+    return { data: [], meta: { pagination: { page: 1, pageSize: 25, pageCount: 0, total: 0 } } };
+  }
 }
 
 export async function getCategoriaBySlug(slug: string): Promise<Categoria | null> {
-  const queryParams = new URLSearchParams({
-    'filters[slug][$eq]': slug,
-  });
-  
-  const response: StrapiResponse<Categoria[]> = await fetchAPI(`/categorias?${queryParams.toString()}`);
-  
-  return response.data[0] || null;
+  try {
+    const queryParams = new URLSearchParams();
+    queryParams.append('filters[slug][$eq]', slug);
+    queryParams.append('fields[0]', 'nome');
+    queryParams.append('fields[1]', 'slug');
+    queryParams.append('fields[2]', 'descricao');
+    
+    const response: StrapiResponse<Categoria[]> = await fetchAPI(`/categorias?${queryParams.toString()}`);
+    
+    return response.data[0] || null;
+  } catch (error) {
+    console.error('Erro ao buscar categoria:', error);
+    return null;
+  }
 }
 
 export function getStrapiMedia(url?: string | null): string {
