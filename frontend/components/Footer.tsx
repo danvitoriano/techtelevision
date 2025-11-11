@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h4 className="text-gray-900 text-sm font-bold mb-4 uppercase tracking-wide">Seções</h4>
+            <h4 className="text-gray-900 text-sm font-bold mb-4 uppercase tracking-wide">Editorias</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/" className="text-gray-600 hover:text-[#CC0000] transition-colors">
@@ -43,6 +43,16 @@ export default function Footer() {
               <li>
                 <Link href="/startups" className="text-gray-600 hover:text-[#CC0000] transition-colors">
                   Startups
+                </Link>
+              </li>
+              <li>
+                <Link href="/inteligencia-artificial" className="text-gray-600 hover:text-[#CC0000] transition-colors">
+                  IA
+                </Link>
+              </li>
+              <li>
+                <Link href="/gadgets" className="text-gray-600 hover:text-[#CC0000] transition-colors">
+                  Gadgets
                 </Link>
               </li>
             </ul>
