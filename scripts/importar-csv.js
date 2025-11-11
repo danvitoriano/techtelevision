@@ -13,7 +13,7 @@ const csv = require('csv-parser');
 const path = require('path');
 
 const STRAPI_URL = 'https://splendid-fish-5d9df6f8db.strapiapp.com';
-const API_TOKEN = 'SEU_TOKEN_AQUI'; // Configure com seu token do Strapi
+const API_TOKEN = 'b8819f9f21af4cda16001c26cb7b262dc8f8319d2a1f01312f35b31dc2ae116a3cffb12bb9a8b2f146fc011a2caa50cf85cac5bacbd64caa6e3d5062701e305cf6fe4b74ce6fbbee1ddb87a7e4212138ecf1d2995791a44476b1047dc9b028803807d046c9c23d17ec733a2432c6c3d006f607eff3ddbb8dd380fd3bd4dbfc07';
 const CSV_FILE = process.argv[2] || path.join(__dirname, 'noticias_tech_semana.csv');
 
 async function importarNoticiaCSV(noticia) {
