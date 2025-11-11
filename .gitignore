@@ -1,0 +1,61 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Produção
+build/
+dist/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Strapi
+backend/.strapi/
+backend/.tmp/
+backend/build/
+backend/dist/
+backend/.strapi-updater.json
+backend/.strapi-cloud.json
+backend/exports/
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep
+
+# Banco de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache
+.cache/
+.parcel-cache/
+

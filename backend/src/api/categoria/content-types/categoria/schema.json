@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorias",
+  "info": {
+    "singularName": "categoria",
+    "pluralName": "categorias",
+    "displayName": "Categoria",
+    "description": "Categorias de notícias"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "noticias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::noticia.noticia",
+      "mappedBy": "categoria"
+    }
+  }
+}
+

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias",
+  "info": {
+    "singularName": "noticia",
+    "pluralName": "noticias",
+    "displayName": "Notícia",
+    "description": "Artigos e notícias do portal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "resumo": {
+      "type": "text",
+      "required": true
+    },
+    "conteudo": {
+      "type": "richtext",
+      "required": true
+    },
+    "imagem": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "autor": {
+      "type": "string"
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "noticias"
+    },
+    "destaque": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
+
