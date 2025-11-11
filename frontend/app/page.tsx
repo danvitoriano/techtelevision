@@ -41,8 +41,19 @@ export default async function Home() {
           </section>
         )}
 
-        {/* Seção: Destaques do Dia - Logo após o Hero */}
+        {/* Seção: Notícias Rápidas - Lista Compacta */}
         {noticiasRecentes.length > 0 && (
+          <section className="px-4 lg:px-6 pb-8">
+            <div className="bg-white shadow-sm rounded-lg p-6">
+              {noticiasRecentes.slice(0, 3).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Seção: Destaques do Dia - Logo após o Hero */}
+        {noticiasRecentes.length > 3 && (
           <section className="px-4 lg:px-6 pb-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
@@ -50,7 +61,7 @@ export default async function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {noticiasRecentes.slice(0, 4).map((noticia) => (
+              {noticiasRecentes.slice(3, 7).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
             </div>
@@ -58,7 +69,7 @@ export default async function Home() {
         )}
 
         {/* Seção: Últimas Notícias */}
-        {noticiasRecentes.length > 4 && (
+        {noticiasRecentes.length > 7 && (
           <section className="px-4 lg:px-6 pb-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
@@ -66,7 +77,7 @@ export default async function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {noticiasRecentes.slice(4, 8).map((noticia) => (
+              {noticiasRecentes.slice(7, 11).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
             </div>
@@ -74,7 +85,7 @@ export default async function Home() {
         )}
 
         {/* Seção: Mais Notícias */}
-        {noticiasRecentes.length > 8 && (
+        {noticiasRecentes.length > 11 && (
           <section className="px-4 lg:px-6 pb-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
@@ -82,7 +93,7 @@ export default async function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {noticiasRecentes.slice(8, 14).map((noticia) => (
+              {noticiasRecentes.slice(11, 17).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
             </div>
