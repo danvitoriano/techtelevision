@@ -1,0 +1,41 @@
+---
+TITULO: Inteligência Artificial revoluciona setor de saúde
+SLUG: ia-revoluciona-saude
+RESUMO: Novas tecnologias de IA estão transformando diagnósticos e tratamentos médicos em todo o mundo.
+AUTOR: Tech Television
+DESTAQUE: true
+CATEGORIA: 1
+CONTEUDO:
+A inteligência artificial está causando uma revolução no setor de saúde, trazendo inovações que prometem salvar vidas e melhorar a qualidade dos tratamentos médicos.
+
+Hospitais e clínicas ao redor do mundo já utilizam algoritmos avançados para auxiliar médicos em diagnósticos mais precisos e rápidos. A tecnologia tem se mostrado especialmente eficaz na detecção precoce de doenças como câncer, problemas cardíacos e condições neurológicas.
+
+Além dos diagnósticos, a IA também está sendo aplicada no desenvolvimento de novos medicamentos, otimização de tratamentos personalizados e até mesmo em cirurgias assistidas por robôs. Especialistas preveem que nos próximos anos, a integração entre medicina e inteligência artificial será ainda mais profunda.
+---
+TITULO: Startup brasileira desenvolve aplicativo para educação
+SLUG: startup-brasileira-app-educacao
+RESUMO: Empresa de São Paulo cria plataforma inovadora para facilitar o aprendizado de estudantes em todo o país.
+AUTOR: Redação
+DESTAQUE: false
+CATEGORIA: 1
+CONTEUDO:
+Uma startup sediada em São Paulo desenvolveu um aplicativo que promete revolucionar a forma como estudantes brasileiros aprendem. A plataforma utiliza gamificação e inteligência artificial para personalizar o conteúdo de acordo com o ritmo de cada aluno.
+
+O aplicativo já conta com mais de 100 mil usuários e está disponível gratuitamente para Android e iOS. Os desenvolvedores explicam que a ferramenta foi criada com foco em democratizar o acesso à educação de qualidade.
+
+A empresa recebeu recentemente um investimento de R$ 5 milhões para expandir suas operações e adicionar novos recursos à plataforma. Entre as melhorias planejadas estão suporte para mais disciplinas e integração com escolas públicas.
+---
+TITULO: Energia solar bate recorde de geração no Brasil
+SLUG: energia-solar-recorde-brasil
+RESUMO: País alcança marco histórico na produção de energia limpa e renovável através de painéis solares.
+AUTOR: Tech Television
+DESTAQUE: false
+CATEGORIA: 1
+CONTEUDO:
+O Brasil atingiu um marco histórico na geração de energia solar, com a produção ultrapassando 30 gigawatts de capacidade instalada. O número representa um crescimento de mais de 50% em relação ao ano anterior.
+
+Especialistas em energia renovável celebram o resultado e destacam que o país possui um dos melhores potenciais solares do mundo. A redução nos custos dos painéis fotovoltaicos e os incentivos governamentais têm contribuído para a expansão do setor.
+
+A tendência é que cada vez mais residências e empresas adotem sistemas de geração própria de energia, contribuindo para a descarbonização da matriz elétrica nacional e redução nas contas de luz.
+---
+
