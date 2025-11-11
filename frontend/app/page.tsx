@@ -41,55 +41,49 @@ export default async function Home() {
           </section>
         )}
 
-        {/* Seção: Últimas Notícias */}
-        <section className="px-4 lg:px-6 py-8">
-          <div className="flex items-center mb-6">
-            <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Últimas Notícias</h2>
-          </div>
-          
-          {noticiasRecentes.length === 0 ? (
-            <div className="bg-white p-10 text-center shadow-sm">
-              <p className="text-gray-600 text-lg">
-                Nenhuma notícia disponível no momento. Inicie o Strapi e adicione conteúdo!
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {noticiasRecentes.slice(0, 4).map((noticia) => (
-                <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
-              ))}
-            </div>
-          )}
-        </section>
-
-        {/* Seção: Mais Notícias */}
-        {noticiasRecentes.length > 4 && (
-          <section className="px-4 lg:px-6 py-8">
+        {/* Seção: Destaques do Dia - Logo após o Hero */}
+        {noticiasRecentes.length > 0 && (
+          <section className="px-4 lg:px-6 pb-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
-              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Mais Notícias</h2>
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Destaques do Dia</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {noticiasRecentes.slice(4, 10).map((noticia) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {noticiasRecentes.slice(0, 4).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
             </div>
           </section>
         )}
 
-        {/* Seção: Lista Compacta */}
-        {noticiasRecentes.length > 10 && (
-          <section className="px-4 lg:px-6 py-8">
+        {/* Seção: Últimas Notícias */}
+        {noticiasRecentes.length > 4 && (
+          <section className="px-4 lg:px-6 pb-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
-              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Todas as Notícias</h2>
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Últimas Notícias</h2>
             </div>
             
-            <div className="bg-white shadow-sm p-6">
-              {noticiasRecentes.slice(10, 14).map((noticia) => (
-                <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {noticiasRecentes.slice(4, 8).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Seção: Mais Notícias */}
+        {noticiasRecentes.length > 8 && (
+          <section className="px-4 lg:px-6 pb-8">
+            <div className="flex items-center mb-6">
+              <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Mais Notícias</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {noticiasRecentes.slice(8, 14).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
             </div>
           </section>
