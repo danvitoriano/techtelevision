@@ -57,6 +57,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tv" className="text-gray-600 hover:text-[#CC0000] transition-colors">
+                  📺 TV ao Vivo
+                </Link>
+              </li>
+              <li>
                 <Link href="/contato" className="text-gray-600 hover:text-[#CC0000] transition-colors">
                   Contato
                 </Link>
