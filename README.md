@@ -8,6 +8,8 @@
 
 Portal de notícias moderno e responsivo desenvolvido com **Next.js 14**, **TypeScript**, **React** e **Strapi** como Headless CMS.
 
+🚀 **Deploy Automático Configurado** | 🌐 **[Ver site online](https://techtelevision-dvitorianos-projects.vercel.app)**
+
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
