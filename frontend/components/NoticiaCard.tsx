@@ -17,10 +17,13 @@ export default function NoticiaCard({ noticia, destaque = false, variant = 'medi
     year: 'numeric',
   });
 
+  // Usar slug ou documentId como fallback
+  const urlSlug = noticia.slug || noticia.documentId;
+
   // Hero card - notícia principal grande
   if (destaque || variant === 'hero') {
     return (
-      <Link href={`/noticia/${noticia.slug}`} className="group block bg-white">
+      <Link href={`/noticia/${urlSlug}`} className="group block bg-white">
         <article className="relative h-[500px] overflow-hidden">
           <Image
             src={imagemUrl}
@@ -54,7 +57,7 @@ export default function NoticiaCard({ noticia, destaque = false, variant = 'medi
   // Large card - secundário grande
   if (variant === 'large') {
     return (
-      <Link href={`/noticia/${noticia.slug}`} className="group block bg-white border-b-2 border-[#e8e8e8]">
+      <Link href={`/noticia/${urlSlug}`} className="group block bg-white border-b-2 border-[#e8e8e8]">
         <article className="flex flex-col">
           <div className="relative h-56 w-full bg-gray-200">
             <Image
@@ -87,7 +90,7 @@ export default function NoticiaCard({ noticia, destaque = false, variant = 'medi
   // Small card - listagem compacta
   if (variant === 'small') {
     return (
-      <Link href={`/noticia/${noticia.slug}`} className="group block bg-white border-b border-[#e8e8e8] py-3">
+      <Link href={`/noticia/${urlSlug}`} className="group block bg-white border-b border-[#e8e8e8] py-3">
         <article className="flex gap-3">
           <div className="relative h-20 w-32 flex-shrink-0 bg-gray-200">
             <Image
@@ -116,7 +119,7 @@ export default function NoticiaCard({ noticia, destaque = false, variant = 'medi
 
   // Medium card - padrão
   return (
-    <Link href={`/noticia/${noticia.slug}`} className="group block bg-white border-b-2 border-[#e8e8e8]">
+    <Link href={`/noticia/${urlSlug}`} className="group block bg-white border-b-2 border-[#e8e8e8]">
       <article className="flex flex-col h-full">
         <div className="relative h-48 w-full bg-gray-200">
           <Image

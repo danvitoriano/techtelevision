@@ -43,21 +43,73 @@ export async function getNoticias(params?: {
     queryParams.append('filters[destaque][$eq]', 'true');
   }
   
-  queryParams.append('populate', '*');
+  // Especificar explicitamente os campos que queremos
+  queryParams.append('fields[0]', 'titulo');
+  queryParams.append('fields[1]', 'slug');
+  queryParams.append('fields[2]', 'resumo');
+  queryParams.append('fields[3]', 'conteudo');
+  queryParams.append('fields[4]', 'autor');
+  queryParams.append('fields[5]', 'destaque');
+  queryParams.append('fields[6]', 'publishedAt');
+  queryParams.append('populate[imagem][fields][0]', 'url');
+  queryParams.append('populate[imagem][fields][1]', 'alternativeText');
+  queryParams.append('populate[imagem][fields][2]', 'formats');
+  queryParams.append('populate[categoria][fields][0]', 'nome');
+  queryParams.append('populate[categoria][fields][1]', 'slug');
   queryParams.append('sort[0]', 'publishedAt:desc');
   
   return fetchAPI(`/noticias?${queryParams.toString()}`);
 }
 
 export async function getNoticiaBySlug(slug: string): Promise<Noticia | null> {
-  const queryParams = new URLSearchParams({
-    'filters[slug][$eq]': slug,
-    'populate': '*',
-  });
-  
-  const response: StrapiResponse<Noticia[]> = await fetchAPI(`/noticias?${queryParams.toString()}`);
-  
-  return response.data[0] || null;
+  try {
+    // Primeiro tenta buscar pelo slug
+    const queryParams = new URLSearchParams();
+    
+    queryParams.append('filters[slug][$eq]', slug);
+    queryParams.append('fields[0]', 'titulo');
+    queryParams.append('fields[1]', 'slug');
+    queryParams.append('fields[2]', 'resumo');
+    queryParams.append('fields[3]', 'conteudo');
+    queryParams.append('fields[4]', 'autor');
+    queryParams.append('fields[5]', 'destaque');
+    queryParams.append('fields[6]', 'publishedAt');
+    queryParams.append('populate[imagem][fields][0]', 'url');
+    queryParams.append('populate[imagem][fields][1]', 'alternativeText');
+    queryParams.append('populate[imagem][fields][2]', 'formats');
+    queryParams.append('populate[categoria][fields][0]', 'nome');
+    queryParams.append('populate[categoria][fields][1]', 'slug');
+    
+    const response: StrapiResponse<Noticia[]> = await fetchAPI(`/noticias?${queryParams.toString()}`);
+    
+    if (response.data[0]) {
+      return response.data[0];
+    }
+    
+    // Se não encontrou pelo slug, tenta buscar pelo documentId
+    const queryParamsById = new URLSearchParams();
+    
+    queryParamsById.append('filters[documentId][$eq]', slug);
+    queryParamsById.append('fields[0]', 'titulo');
+    queryParamsById.append('fields[1]', 'slug');
+    queryParamsById.append('fields[2]', 'resumo');
+    queryParamsById.append('fields[3]', 'conteudo');
+    queryParamsById.append('fields[4]', 'autor');
+    queryParamsById.append('fields[5]', 'destaque');
+    queryParamsById.append('fields[6]', 'publishedAt');
+    queryParamsById.append('populate[imagem][fields][0]', 'url');
+    queryParamsById.append('populate[imagem][fields][1]', 'alternativeText');
+    queryParamsById.append('populate[imagem][fields][2]', 'formats');
+    queryParamsById.append('populate[categoria][fields][0]', 'nome');
+    queryParamsById.append('populate[categoria][fields][1]', 'slug');
+    
+    const responseById: StrapiResponse<Noticia[]> = await fetchAPI(`/noticias?${queryParamsById.toString()}`);
+    
+    return responseById.data[0] || null;
+  } catch (error) {
+    console.error('Erro ao buscar notícia:', error);
+    return null;
+  }
 }
 
 export async function getCategorias(): Promise<StrapiResponse<Categoria[]>> {
