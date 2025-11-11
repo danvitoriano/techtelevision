@@ -65,7 +65,7 @@ export default async function Home() {
 
         {/* Seção: Mais Notícias */}
         {noticiasRecentes.length > 4 && (
-          <section className="px-4 lg:px-6 py-8 bg-white">
+          <section className="px-4 lg:px-6 py-8">
             <div className="flex items-center mb-6">
               <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
               <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Mais Notícias</h2>
