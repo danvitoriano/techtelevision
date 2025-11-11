@@ -25,7 +25,7 @@ const fs = require('fs');
 const path = require('path');
 
 const STRAPI_URL = 'https://splendid-fish-5d9df6f8db.strapiapp.com';
-const API_TOKEN = 'SEU_TOKEN_AQUI'; // Obtenha em Settings → API Tokens
+const API_TOKEN = 'SEU_TOKEN_AQUI'; // Configure com seu token do Strapi // Obtenha em Settings → API Tokens
 const TEXTO_FILE = path.join(__dirname, 'noticias.txt');
 
 function converterTextoParaHTML(texto) {

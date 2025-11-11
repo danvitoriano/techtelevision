@@ -13,8 +13,8 @@ const csv = require('csv-parser');
 const path = require('path');
 
 const STRAPI_URL = 'https://splendid-fish-5d9df6f8db.strapiapp.com';
-const API_TOKEN = 'SEU_TOKEN_AQUI'; // Obtenha em Settings → API Tokens
-const CSV_FILE = path.join(__dirname, 'noticias-exemplo.csv');
+const API_TOKEN = 'SEU_TOKEN_AQUI'; // Configure com seu token do Strapi
+const CSV_FILE = process.argv[2] || path.join(__dirname, 'noticias_tech_semana.csv');
 
 async function importarNoticiaCSV(noticia) {
   try {
