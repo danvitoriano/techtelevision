@@ -11,7 +11,7 @@ export default async function Home() {
     const responseDestaque = await getNoticias({ destaque: true, limit: 1 });
     noticiasDestaque = responseDestaque.data;
 
-    const responseRecentes = await getNoticias({ limit: 16 });
+    const responseRecentes = await getNoticias({ limit: 30 });
     const todasNoticias = responseRecentes.data.filter(n => !n.destaque);
     
     // Separar notícias secundárias (próximas 2) e recentes (resto)
