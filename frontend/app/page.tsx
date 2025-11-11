@@ -11,50 +11,51 @@ export default async function Home() {
     const responseDestaque = await getNoticias({ destaque: true, limit: 1 });
     noticiasDestaque = responseDestaque.data;
 
-    const responseRecentes = await getNoticias({ limit: 15 });
+    const responseRecentes = await getNoticias({ limit: 16 });
     const todasNoticias = responseRecentes.data.filter(n => !n.destaque);
     
-    // Separar notícias secundárias (próximas 3) e recentes (resto)
-    noticiasSecundarias = todasNoticias.slice(0, 3);
-    noticiasRecentes = todasNoticias.slice(3);
+    // Separar notícias secundárias (próximas 2) e recentes (resto)
+    noticiasSecundarias = todasNoticias.slice(0, 2);
+    noticiasRecentes = todasNoticias.slice(2);
   } catch (error) {
     console.error('Erro ao carregar notícias:', error);
   }
 
   return (
-    <div className="bg-[#f6f6f6]">
-      <div className="max-w-[1280px] mx-auto">
-        {/* Grid Principal - Estilo BBC */}
+    <div className="bg-[#fafafa]">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Grid Principal - Estilo CNN Brasil */}
         {noticiasDestaque.length > 0 && (
-          <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 lg:p-6">
             {/* Notícia Principal (Hero) - 2 colunas */}
             <div className="lg:col-span-2">
               <NoticiaCard noticia={noticiasDestaque[0]} variant="hero" />
             </div>
 
             {/* Coluna Lateral - Notícias Secundárias */}
-            <div className="flex flex-col gap-4">
-              {noticiasSecundarias.slice(0, 3).map((noticia) => (
-                <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
+            <div className="flex flex-col gap-6">
+              {noticiasSecundarias.slice(0, 2).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="large" />
               ))}
             </div>
           </section>
         )}
 
         {/* Seção: Últimas Notícias */}
-        <section className="px-4 py-6">
-          <div className="border-b-4 border-[#BB1919] mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 pb-2">Últimas Notícias</h2>
+        <section className="px-4 lg:px-6 py-8">
+          <div className="flex items-center mb-6">
+            <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
+            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Últimas Notícias</h2>
           </div>
           
           {noticiasRecentes.length === 0 ? (
-            <div className="bg-white p-8 text-center border-2 border-[#e8e8e8]">
-              <p className="text-gray-600">
+            <div className="bg-white p-10 text-center shadow-sm">
+              <p className="text-gray-600 text-lg">
                 Nenhuma notícia disponível no momento. Inicie o Strapi e adicione conteúdo!
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {noticiasRecentes.slice(0, 4).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
               ))}
@@ -62,27 +63,34 @@ export default async function Home() {
           )}
         </section>
 
-        {/* Seção: Mais Notícias (se houver) */}
+        {/* Seção: Mais Notícias */}
         {noticiasRecentes.length > 4 && (
-          <section className="px-4 py-6">
-            <div className="border-b-4 border-[#BB1919] mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 pb-2">Mais Notícias</h2>
+          <section className="px-4 lg:px-6 py-8 bg-white">
+            <div className="flex items-center mb-6">
+              <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Mais Notícias</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Coluna Esquerda */}
-              <div className="bg-white p-4">
-                {noticiasRecentes.slice(4, 8).map((noticia) => (
-                  <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
-                ))}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {noticiasRecentes.slice(4, 10).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
+              ))}
+            </div>
+          </section>
+        )}
 
-              {/* Coluna Direita */}
-              <div className="bg-white p-4">
-                {noticiasRecentes.slice(8, 12).map((noticia) => (
-                  <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
-                ))}
-              </div>
+        {/* Seção: Lista Compacta */}
+        {noticiasRecentes.length > 10 && (
+          <section className="px-4 lg:px-6 py-8">
+            <div className="flex items-center mb-6">
+              <div className="h-1 w-1 bg-[#CC0000] mr-3"></div>
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Todas as Notícias</h2>
+            </div>
+            
+            <div className="bg-white shadow-sm p-6">
+              {noticiasRecentes.slice(10, 14).map((noticia) => (
+                <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
+              ))}
             </div>
           </section>
         )}
