@@ -43,42 +43,44 @@ export default async function CategoriaPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Breadcrumb */}
-      <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-        <Link href="/" className="hover:text-blue-600">Início</Link>
-        <span>/</span>
-        <span className="text-gray-900">{categoria.nome}</span>
-      </nav>
+    <div className="bg-[#f6f6f6] min-h-screen">
+      <div className="max-w-[1280px] mx-auto px-4 py-8">
+        {/* Breadcrumb */}
+        <nav className="flex items-center space-x-2 text-xs text-gray-500 mb-6">
+          <Link href="/" className="hover:text-[#BB1919] transition-colors">Início</Link>
+          <span>/</span>
+          <span className="text-gray-900">{categoria.nome}</span>
+        </nav>
 
-      {/* Header da Categoria */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">{categoria.nome}</h1>
-        {categoria.descricao && (
-          <p className="text-lg text-gray-600">{categoria.descricao}</p>
+        {/* Header da Categoria */}
+        <div className="mb-8 border-b-4 border-[#BB1919] pb-4">
+          <h1 className="text-5xl font-bold text-gray-900 mb-3">{categoria.nome}</h1>
+          {categoria.descricao && (
+            <p className="text-lg text-gray-600">{categoria.descricao}</p>
+          )}
+        </div>
+
+        {/* Lista de Notícias */}
+        {noticias.length === 0 ? (
+          <div className="bg-white p-8 text-center border-2 border-[#e8e8e8]">
+            <p className="text-gray-600 mb-4">
+              Nenhuma notícia encontrada nesta categoria.
+            </p>
+            <Link 
+              href="/"
+              className="inline-block text-[#BB1919] hover:underline font-semibold"
+            >
+              Voltar para página inicial
+            </Link>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {noticias.map((noticia) => (
+              <NoticiaCard key={noticia.id} noticia={noticia} variant="medium" />
+            ))}
+          </div>
         )}
       </div>
-
-      {/* Lista de Notícias */}
-      {noticias.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-md p-8 text-center">
-          <p className="text-gray-600">
-            Nenhuma notícia encontrada nesta categoria.
-          </p>
-          <Link 
-            href="/"
-            className="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium"
-          >
-            Voltar para página inicial
-          </Link>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {noticias.map((noticia) => (
-            <NoticiaCard key={noticia.id} noticia={noticia} />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

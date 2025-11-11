@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Portal de Notícias | Seu portal de informações",
@@ -21,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} antialiased bg-gray-50`}>
+      <body className="antialiased bg-white">
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-[#f6f6f6]">
           {children}
         </main>
         <Footer />
