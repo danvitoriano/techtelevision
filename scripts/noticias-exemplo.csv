@@ -1,0 +1,5 @@
+titulo,slug,resumo,conteudo,autor,destaque,categoria_id
+"Nova tecnologia revoluciona mercado","nova-tecnologia-revoluciona","Breve descrição da tecnologia","<p>Conteúdo completo sobre a nova tecnologia que está revolucionando o mercado.</p>","Tech Television",false,1
+"Inteligência Artificial avança","ia-avanca","IA apresenta novos recursos","<p>Os avanços recentes em Inteligência Artificial estão transformando diversos setores.</p>","Tech Television",true,1
+"Startup brasileira recebe investimento","startup-brasileira-investimento","Rodada de investimentos de R$ 10 milhões","<p>Startup de tecnologia sediada em São Paulo recebe aporte significativo.</p>","Redação",false,1
+
