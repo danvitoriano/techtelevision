@@ -27,26 +27,25 @@ export default async function Home() {
         {/* Grid Principal - Estilo CNN Brasil */}
         {noticiasDestaque.length > 0 && (
           <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 lg:p-6">
-            {/* Notícia Principal (Hero) - 2 colunas */}
-            <div className="lg:col-span-2">
+            {/* Coluna Esquerda - Notícia Principal + Notícias Rápidas */}
+            <div className="lg:col-span-2 flex flex-col gap-6">
+              {/* Notícia Principal (Hero) */}
               <NoticiaCard noticia={noticiasDestaque[0]} variant="hero" />
+              
+              {/* Notícias Rápidas - Logo abaixo do Hero */}
+              {noticiasRecentes.length > 0 && (
+                <div className="bg-white shadow-sm rounded-lg p-6">
+                  {noticiasRecentes.slice(0, 3).map((noticia) => (
+                    <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Coluna Lateral - Notícias Secundárias */}
+            {/* Coluna Lateral Direita - Notícias Secundárias */}
             <div className="flex flex-col gap-6">
               {noticiasSecundarias.slice(0, 2).map((noticia) => (
                 <NoticiaCard key={noticia.id} noticia={noticia} variant="large" />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Seção: Notícias Rápidas - Lista Compacta */}
-        {noticiasRecentes.length > 0 && (
-          <section className="px-4 lg:px-6 pb-8">
-            <div className="bg-white shadow-sm rounded-lg p-6">
-              {noticiasRecentes.slice(0, 3).map((noticia) => (
-                <NoticiaCard key={noticia.id} noticia={noticia} variant="small" />
               ))}
             </div>
           </section>
