@@ -56,8 +56,6 @@ jobs:
     steps:
     - name: Checkout código
       uses: actions/checkout@v4
-      with:
-        submodules: true
     
     - name: Configurar Node.js
       uses: actions/setup-node@v4
