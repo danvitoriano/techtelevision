@@ -2,6 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend CMS para Portal de Notícias",
+  "engines": {
+    "node": ">=20.x",
+    "npm": ">=10.x"
+  },
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
