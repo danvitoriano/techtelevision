@@ -87,7 +87,7 @@ jobs:
         NEXT_PUBLIC_STRAPI_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337' }}
     
     - name: Upload do artefato de build
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: frontend-build
         path: |
