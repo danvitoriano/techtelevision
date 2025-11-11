@@ -1,5 +1,11 @@
 # Portal de Notícias
 
+![Backend CI](https://github.com/danvitoriano/techtelevision/actions/workflows/backend-ci.yml/badge.svg)
+![Frontend CI](https://github.com/danvitoriano/techtelevision/actions/workflows/frontend-ci.yml/badge.svg)
+![Full Stack CI](https://github.com/danvitoriano/techtelevision/actions/workflows/full-ci.yml/badge.svg)
+![Security](https://github.com/danvitoriano/techtelevision/actions/workflows/security.yml/badge.svg)
+![CodeQL](https://github.com/danvitoriano/techtelevision/actions/workflows/codeql.yml/badge.svg)
+
 Portal de notícias moderno e responsivo desenvolvido com **Next.js 14**, **TypeScript**, **React** e **Strapi** como Headless CMS.
 
 ## 🚀 Tecnologias Utilizadas
@@ -231,6 +237,24 @@ Sinta-se à vontade para contribuir com melhorias:
 3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
 4. Push para a branch (`git push origin feature/NovaFeature`)
 5. Abra um Pull Request
+
+## 🚀 CI/CD
+
+Este projeto possui integração contínua e entrega contínua totalmente configurada com GitHub Actions:
+
+- ✅ **Backend CI**: Build e testes automáticos do Strapi
+- ✅ **Frontend CI**: Build, lint e testes do Next.js
+- ✅ **Security Scan**: Análise de vulnerabilidades e dependências
+- ✅ **CodeQL**: Análise estática de código
+- ✅ **Dependabot**: Atualização automática de dependências
+
+📚 **[Documentação completa do CI/CD](.github/CI-CD.md)**
+
+### Status dos Workflows
+
+- Backend CI: ![Backend CI](https://github.com/danvitoriano/techtelevision/actions/workflows/backend-ci.yml/badge.svg)
+- Frontend CI: ![Frontend CI](https://github.com/danvitoriano/techtelevision/actions/workflows/frontend-ci.yml/badge.svg)
+- Security: ![Security](https://github.com/danvitoriano/techtelevision/actions/workflows/security.yml/badge.svg)
 
 ## 📄 Licença
 
