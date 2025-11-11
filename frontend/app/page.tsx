@@ -1,9 +1,10 @@
 import NoticiaCard from '@/components/NoticiaCard';
 import { getNoticias } from '@/lib/strapi';
+import { Noticia } from '@/types';
 
 export default async function Home() {
-  let noticiasDestaque = [];
-  let noticiasRecentes = [];
+  let noticiasDestaque: Noticia[] = [];
+  let noticiasRecentes: Noticia[] = [];
 
   try {
     const responseDestaque = await getNoticias({ destaque: true, limit: 1 });

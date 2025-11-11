@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import NoticiaCard from '@/components/NoticiaCard';
 import { getCategoriaBySlug, getNoticias } from '@/lib/strapi';
 import { Metadata } from 'next';
+import { Noticia } from '@/types';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -32,7 +33,7 @@ export default async function CategoriaPage({ params }: PageProps) {
     notFound();
   }
 
-  let noticias = [];
+  let noticias: Noticia[] = [];
   
   try {
     const response = await getNoticias({ categoriaSlug: slug, limit: 20 });
