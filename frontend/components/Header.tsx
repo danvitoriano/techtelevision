@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { getCategorias } from '@/lib/strapi';
+import { Categoria } from '@/types';
 
 export default async function Header() {
-  let categorias = [];
+  let categorias: Categoria[] = [];
   
   try {
     const response = await getCategorias();
