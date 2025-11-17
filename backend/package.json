@@ -13,7 +13,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-users-permissions": "^5.30.1",
+    "@strapi/plugin-users-permissions": "^5.31.0",
     "@strapi/strapi": "^5.30.1",
     "better-sqlite3": "^11.7.0",
     "esbuild": "^0.27.0",
