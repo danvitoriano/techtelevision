@@ -19,7 +19,7 @@
     "esbuild": "^0.27.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-router-dom": "^6.30.1",
+    "react-router-dom": "^7.12.0",
     "styled-components": "^6.1.19"
   },
   "author": "",
