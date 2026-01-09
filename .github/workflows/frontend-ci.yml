@@ -33,7 +33,7 @@ jobs:
     
     - name: Instalar dependências
       working-directory: ./frontend
-      run: npm ci
+      run: npm ci --legacy-peer-deps
     
     - name: Verificar código (lint)
       working-directory: ./frontend
@@ -73,7 +73,7 @@ jobs:
     
     - name: Instalar dependências
       working-directory: ./frontend
-      run: npm ci
+      run: npm ci --legacy-peer-deps
     
     - name: Build do projeto
       working-directory: ./frontend

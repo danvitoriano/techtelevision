@@ -44,7 +44,7 @@ jobs:
     - name: Instalar e testar backend
       working-directory: ./backend
       run: |
-        npm ci
+        npm ci --legacy-peer-deps
         npm run build
 
   frontend:
@@ -67,7 +67,7 @@ jobs:
     - name: Instalar e testar frontend
       working-directory: ./frontend
       run: |
-        npm ci
+        npm ci --legacy-peer-deps
         npm run lint
         npm run build
 
