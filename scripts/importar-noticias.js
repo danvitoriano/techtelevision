@@ -53,7 +53,6 @@ async function importarNoticias() {
       });
 
       if (response.ok) {
-        const result = await response.json();
         console.log(`✅ Importada: ${noticia.titulo}`);
         sucessos++;
       } else {
