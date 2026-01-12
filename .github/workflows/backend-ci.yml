@@ -22,7 +22,7 @@ jobs:
     
     steps:
     - name: Checkout código
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     
     - name: Configurar Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
@@ -57,7 +57,7 @@ jobs:
     
     steps:
     - name: Checkout código
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     
     - name: Configurar Node.js
       uses: actions/setup-node@v4
@@ -92,7 +92,7 @@ jobs:
   #   
   #   steps:
   #   - name: Checkout código
-  #     uses: actions/checkout@v4
+  #     uses: actions/checkout@v6
   #   
   #   - name: Deploy para Strapi Cloud
   #     run: |
